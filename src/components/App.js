@@ -13,13 +13,27 @@ class App extends Component {
     super(props);
     this.state = {
       block: "",
+      width: 0, 
+      height: 0
     };
+    //for determining the screen width
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
   componentWillMount() {
       this.setState({
         block: ""
       });
+      this.updateWindowDimensions();
+      window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+  
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
 
   render() {
@@ -28,8 +42,7 @@ class App extends Component {
         <BaseLayout>
           <Switch>
             <Route exact path="/" render={(props) => ( <Homepage /> )} />
-            {/* <Route path="/block/:value" render={(props) => ( <SingleBlock {...props}/> )} />
-            <Route path="/transaction/:value" render={(props) => ( <SingleTransaction {...props}/> )} /> */}
+            {/* <Route path="/product/:value" render={(props) => ( <Product {...props}/> )} /> */}
           </Switch>
         </BaseLayout>
       </BrowserRouter>

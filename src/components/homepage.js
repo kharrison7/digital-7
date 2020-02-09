@@ -13,6 +13,7 @@ export default class Homepage extends Component {
   }
 
   componentWillMount() {
+    // console.log({this.props});
     let date = Date.now();
     //makes a request to the API for all the blocks for one day.
        request

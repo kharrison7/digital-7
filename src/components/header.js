@@ -8,23 +8,35 @@ import '../styles/App.css';
 export default class Header extends Component {
   constructor(props) {
     super(props);
-    this.handleButtonClick = this.handleButtonClick.bind(this);
-    this.state = {
-      isLatest: false,
-    };
+    //for determining the screen width
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
-//ideally this would be passed down as a prop to re-render the singleBlock component onClick.
-handleButtonClick() {
-  this.setState(prevState => ({
-      isLatest: !prevState.isLatest
-    }));
+
+
+componentWillMount() {
+    this.setState({
+      block: ""
+    });
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
 }
 
+componentWillUnmount() {
+  window.removeEventListener('resize', this.updateWindowDimensions);
+}
+
+updateWindowDimensions() {
+  this.setState({ width: window.innerWidth, height: window.innerHeight });
+}
+
+
+
   render() {
-   
       return (
         <div>
-        {/* <Stylesheet /> */}
+            { console.log("controls menu: "+this.state.width) }
+            {this.state.width > 568 &&
+      
           <div className="entireHeader" >
             <div id = 'topHeader'>
                 <li>
@@ -44,6 +56,10 @@ handleButtonClick() {
                 </div>
             </div>
           </div>
+          } 
+          {this.state.width <= 568 &&
+              <h1>hamburger menu</h1>
+          }
         </div> 
       )
     }

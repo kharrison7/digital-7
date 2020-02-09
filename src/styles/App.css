@@ -30,13 +30,15 @@ p {
 
 .topHeader {
     width: 280px;
-    display: inline-block;
+    height:20px;
+    display: block;
     background-color: #181818; 
 }
 
 .bottomHeader {
     width: 280px;
-    display: inline-block;
+    height: 40px;
+    display: block;
     background-color: #fafafb;
 }
 
@@ -54,7 +56,7 @@ p {
 .bottomheadertext{
     font-family:Public Sans;
     float: left;
-    width: 150px;
+    width: 100px;
     height: 20px;
     white-space: nowrap;
     overflow: hidden;
@@ -77,19 +79,27 @@ p {
   }
 
   .pageContents {
-    width: 1200px;
+    width: 1600px;
   }
 
   .entireHeader {
-    width: 1200px;
+    width: 1600px;
+    display: grid;
+    justify-content: center;
 }
 
 .topHeader {
-    width: 1200px;
+    width: 100%;
+    height:20px;
+    display: block;
+    background-color: #181818; 
 }
 
 .bottomHeader {
-    width: 1200px;
+    width: 100%;
+    height: 40px;
+    display: block;
+    background-color: #fafafb;
 }
 
 }

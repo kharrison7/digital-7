@@ -50,6 +50,10 @@ updateWindowDimensions() {
             </div>
             <div id = 'bottomHeader' >
                 <p className='bottomheadertext' >Solutions</p>
+                <p className='bottomheadertext' >Products</p>
+                <p className='bottomheadertext' >Automation</p>
+                <p className='bottomheadertext' >Education</p>
+                <p className='bottomheadertext' >Resources</p>
                 <div>
                   <input type='search' className="fa fa-search" placeholder='Search' />
                   <i className="fa fa-search"></i>

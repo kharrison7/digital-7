@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-// import '../styles/bootstrap.min.css';
-import { Link } from 'react-router-dom';
 import request from 'superagent';
 
 export default class Homepage extends Component {
@@ -50,29 +48,6 @@ export default class Homepage extends Component {
                   <h5>Number: {this.state.blocks.length}</h5>
                   <h5>Today is: {fullDate}</h5>
                   <hr />
-                    {/* <div className="blocks">
-                      {this.state.blocks.map( (block,i) => {
-                        let mainChain = '';
-                        if(block.main_chain === true){
-                          mainChain = <div>
-                                        <p>Main_Chain: True</p>
-                                      </div>
-                        } else {
-                          mainChain = <div>
-                                        <p>Main_Chain: False</p>
-                                      </div>
-                        }
-                        return <div key={i}>
-                          <div>
-                            <Link to={`/block/${ block.hash }`}>Block Hash: {block.hash}</Link>
-                          </div>
-                          <p>Height: {block.height}</p>
-                          {mainChain}
-                          <p>Raw Time: {block.time}</p>
-                          <hr />
-                        </div>
-                      })}
-                    </div> */}
                 </div>
               </div>
             </div>

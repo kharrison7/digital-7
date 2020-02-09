@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../styles/App.css';
-// import '../styles/bootstrap.min.css';
 import Header from './header.js';
 //A simple component used to pass props.
 export default class BaseLayout extends Component {
@@ -12,7 +11,7 @@ export default class BaseLayout extends Component {
 
 render() {
     return (
-      <div>
+      <div className='pageContents'>
         <Header/>
         <div >
           {this.props.children}

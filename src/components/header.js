@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import '../styles/App.css';
+// import '../node_modules/font-awesome/css/font-awesome.min.css';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
 //A simple navigation header.
 export default class Header extends Component {
   constructor(props) {
@@ -18,96 +22,29 @@ handleButtonClick() {
 
   render() {
    
-    // This styles the outer header boundary and content positions.
-    let entireHeader = {
-        "width": "100%",
-        "display": "block",
-        // "listStyleType": "none",
-        "justifyContent": "center",
-        // "backgroundColor": "#fafafb",
-        // "padding": "20px"
-    }
-
-    let topHeader = {
-        "width": "100%",
-        "display": "inline-block",
-        // "listStyleType": "none",
-        // "justifyContent": "center",
-        "backgroundColor": "#181818",
-        // "padding": "20px"
-        
-    }
-
-    let bottomHeader = {
-        "width": "100%",
-        "display": "inline-block",
-        // "listStyleType": "none",
-        // "justifyContent": "center",
-        
-        "backgroundColor": "#fafafb",
-        // "padding": "20px"
-    }
-
-    let topheadertext = {
-        "font":"Public Sans",
-        "float": "left",
-        "width": "150px",
-        "height": "20px",
-        "white-space": "nowrap",
-        "overflow": "hidden",
-        "color": "#ffffff",
-        "backgroundColor": "#181818"
-    }
-
-    let bottomheadertext = {
-        "font":"Public Sans",
-        "float": "left",
-        "width": "150px",
-        "height": "20px",
-        "white-space": "nowrap",
-        "overflow": "hidden",
-        // "color": "#ffffff",
-        // "backgroundColor": "#181818"
-    }
-
-    let inputsearch = {
-        "font":"Public Sans",
-        "float": "right",
-        "white-space": "nowrap",
-        "overflow": "hidden",
-        // "color": "#ffffff",
-        // "backgroundColor": "#181818"
-    }
-
-
       return (
-        <div className="totalHeader" style={entireHeader}>
-            <div id = 'top-header' style={topHeader}>
+        <div>
+        {/* <Stylesheet /> */}
+          <div className="entireHeader" >
+            <div id = 'topHeader'>
                 <li>
-                   {/* <NavLink activeClassName="selected" to="/"> */}
-                     <p className='top-header-text' style={topheadertext}>EN</p>
-                     <p className='top-header-text' style={topheadertext}>Safety</p>
-                     <p className='top-header-text' style={topheadertext}>Help</p>
-                     <p className='top-header-text' style={topheadertext}>Where to Buy/Rent</p>
-                     <p className='top-header-text' style={topheadertext}>Sign In</p>
-                   {/* </NavLink> */}
+                     <p className='topheadertext' >EN</p>
+                     <p className='topheadertext' >Safety</p>
+                     <p className='topheadertext' >Help</p>
+                     <p className='topheadertext' >Where to Buy/Rent</p>
+                     <p className='topheadertext' >Sign In</p>
                 </li>
                 
             </div>
-            <div id = 'bottom-header' style={bottomHeader}>
-                <p className='bottom-header-text' style={bottomheadertext}>Solutions</p>
-                {/* <li>
-                   <NavLink activeClassName="selected" to="/">
-                     <input className='btn btn-outline-primary' type='submit' value='Homepage'/>
-                   </NavLink>
-                </li> */}
-                {/* {rightButton} */}
+            <div id = 'bottomHeader' >
+                <p className='bottomheadertext' >Solutions</p>
                 <div>
-                  <input type='search' className='input-search' style={inputsearch} placeholder='Search' />
+                  <input type='search' className="fa fa-search" placeholder='Search' />
+                  <i className="fa fa-search"></i>
                 </div>
             </div>
-        
-      </div>
+          </div>
+        </div> 
       )
     }
   }
